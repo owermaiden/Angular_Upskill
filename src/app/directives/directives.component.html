@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-6">
+        <h3>Angular Directives</h3>
+        <br>
+        <button class="btn btn-primary" [ngClass]="{'ower': isAuthorized }"  (click)="onClick()">Click Me</button>
+    </div>
+    <div class="col-6">
+        <h2 [ngStyle]="{'background-color': isAuthorized ? 'red' : 'green'}">This is with ngStyle</h2>
+        <h2>This is without ngStyle</h2>
+        <h2 style="background-color: blueviolet;">This is also owerriden</h2>
+        <br>
+        <ul class="list-group" *ngIf="isAuthorized">
+            <li class="list-group-item" *ngFor="let developer of developers; let i = index">{{developer + ' '+ i}}</li>
+        </ul>
+    </div>
+
+</div>
