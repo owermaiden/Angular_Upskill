@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ChildComponent {
  @Input() selectedMentor: string = 'Ower';
+ @Output() likeEvent = new EventEmitter<string>();
+
+ onLikeMentor(likedMentor: string){
+    this.likeEvent.emit(likedMentor);
+ }
 }

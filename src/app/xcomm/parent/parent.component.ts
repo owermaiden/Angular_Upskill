@@ -16,7 +16,10 @@ export class ParentComponent implements OnInit{
 
   onSelectMentor(mentor: string){
     this.mentorSelected = mentor;
-    console.log(this.mentorSelected);
+  }
+
+  onLikeMentor(event: any){
+    console.log(event);
   }
 
 
