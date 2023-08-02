@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
-
+  selectedMentor: string = 'Ower';
 }
