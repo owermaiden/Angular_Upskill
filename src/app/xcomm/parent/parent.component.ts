@@ -18,8 +18,9 @@ export class ParentComponent implements OnInit{
     this.mentorSelected = mentor;
   }
 
-  onLikeMentor(event: any){
-    console.log(event);
+  onLikeMentor(mentor: any){
+    let index = this.mentors.findIndex(d => d === mentor);
+    this.mentors[index] = `${mentor} liked`;
   }
 
 
