@@ -8,7 +8,7 @@ import { Mentor } from 'src/app/shared/mentor';
   templateUrl: './like.component.html',
   styleUrls: ['./like.component.css']
 })
-export class LikeComponent implements OnInit{
+export class ListComponent implements OnInit{
   mentors: Mentor[] = [];
 
   constructor(private service: MentorService, private router: Router){}

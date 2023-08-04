@@ -8,7 +8,7 @@ import { Mentor } from 'src/app/shared/mentor';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class DetailComponent implements OnInit {
   selectedMentor: Mentor | undefined;
 
   constructor(private service: MentorService, private router: Router){}

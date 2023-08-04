@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Mentor } from './shared/mentor';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class MentorService {
 
   selectedMentor: Mentor = this.mentors[0];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllMentors(): Mentor[]{
     return this.mentors.slice();
