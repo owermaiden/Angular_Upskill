@@ -18,7 +18,7 @@ const routes: Routes =[
   {path: "routing/:productid", component: RoutingComponent},
   {path: "xcomm", component: ParentComponent},
   {path: "intercomm", component: DetailsComponent},
-  {path: "likeComm", component: LikeComponent},
+  {path: "listComm", component: LikeComponent},
   {path: '**', component: BindingComponent }
 ]
 

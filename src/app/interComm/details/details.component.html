@@ -3,9 +3,9 @@
     <div class="card" style="width: 10rem;">
       <img src="assets/images/403022_business man_male_user_avatar_profile_icon.png" class="card-img-top" alt="...">
       <div class="card-body text-center">
-        <h5 class="card-title">Name</h5>
+        <h5 class="card-title">{{ selectedMentor?.name }}</h5>
         <p class="card-text">Name will come from Service</p>
-        <a class="btn btn-primary" (click)="onLikeMentor()">Like!</a>
+        <a class="btn btn-primary" (click)="onLikeMentor(selectedMentor)">Like!</a>
       </div>
   </div>
 </div>

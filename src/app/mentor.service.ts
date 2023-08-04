@@ -12,7 +12,24 @@ export class MentorService {
     new Mentor('Sahin', 20)
   ];
 
+  selectedMentor: Mentor = this.mentors[0];
+
   constructor() { }
+
+  getAllMentors(): Mentor[]{
+    return this.mentors.slice();
+  }
+
+  selectMentor(mentor: Mentor){
+    this.selectedMentor = mentor;
+  }
+
+  onLikeMentor(selectedMentor: any){
+    let index = this.mentors.findIndex(d => d.name === selectedMentor.name);
+    this.mentors[index].likeCount++;
+  }
+
+
 
   
 
