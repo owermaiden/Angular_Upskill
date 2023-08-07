@@ -1,16 +1,17 @@
 
-<form style="width: 500px;" >
+<form style="width: 500px;" #form="ngForm" (ngSubmit)="onSubmit(form)" >
   <div>
     <label for="name" class="form-label" >Name:</label>
-    <input class="form-control" type="text" id="name" name="name" required />
+    <input class="form-control" type="text" id="name" name="name" ngModel required minlength="8"/>
   </div>
   <div>
     <label for="email" class="form-label">Email:</label>
-    <input class="form-control" type="email" id="email" name="email" required email/>
+    <input class="form-control" type="email" id="email" name="email" ngModel required email/>
   </div>
   <div>
     <label for="message" class="form-label">Message:</label>
-    <textarea class="form-control" id="message" name="message" ></textarea>
+    <textarea class="form-control" id="message" name="message" ngModel ></textarea>
   </div>
-  <button type="submit" class="btn btn-primary mt-3" >Submit</button>
+  <button type="submit" class="btn btn-primary mt-3" [disabled]="!form.valid">Submit</button>
 </form>
+
