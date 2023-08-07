@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RoutingComponent } from './routing/routing.component';
@@ -13,6 +13,7 @@ import { DetailComponent } from './interComm/details/details.component';
 import { ListComponent } from './interComm/like/like.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TdFormsComponent } from './forms/td-forms/td-forms.component';
+import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
 
 const routes: Routes =[
   {path:'bindings', component: BindingComponent}, // Localhost:4200/binding
@@ -22,6 +23,7 @@ const routes: Routes =[
   {path: "intercomm", component: DetailComponent},
   {path: "listComm", component: ListComponent},
   {path: "tdform", component: TdFormsComponent},
+  {path: "rxform", component: ReactiveFormsComponent},
   {path: '**', component: BindingComponent }
 ]
 
@@ -35,12 +37,14 @@ const routes: Routes =[
     ChildComponent,
     DetailComponent,
     ListComponent,
-    TdFormsComponent
+    TdFormsComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
