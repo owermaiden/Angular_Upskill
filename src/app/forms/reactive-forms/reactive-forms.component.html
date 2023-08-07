@@ -1,15 +1,15 @@
-<form style="width: 500px;">
+<form style="width: 500px;" [formGroup]="myFrom"  (ngSubmit)="onSubmit()" >
   <div>
     <label for="name" class="form-label">Name:</label>
-    <input type="text" id="name" class="form-control"/>
+    <input type="text" id="name" class="form-control" formControlName="name"/>
   </div>
   <div>
     <label for="email" class="form-label">Email:</label>
-    <input type="email" id="email" class="form-control"/>
+    <input type="email" id="email" class="form-control" formControlName="email"/>
   </div>
   <div>
     <label for="message" class="form-label">Message:</label>
-    <textarea id="message" class="form-control"></textarea>
+    <textarea id="message" class="form-control" formControlName="message"></textarea>
   </div>
   <button type="submit" class="btn btn-primary mt-3">Submit</button>
 </form>
