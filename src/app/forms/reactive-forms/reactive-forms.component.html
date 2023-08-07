@@ -1,7 +1,10 @@
 <form style="width: 500px;" [formGroup]="myFrom"  (ngSubmit)="onSubmit()" >
   <div>
     <label for="name" class="form-label">Name:</label>
-    <input type="text" id="name" class="form-control" formControlName="name"/>
+    <input type="text" id="name" class="form-control" formControlName="name" minlength="10"/>
+  </div>
+  <div *ngIf="myFrom.controls['name'].invalid && (myFrom.controls['name'].touched || myFrom.controls['name'].dirty)">
+    <p style="color: crimson; font-size: 10px;">Please fill up your name</p>
   </div>
   <div>
     <label for="email" class="form-label">Email:</label>
@@ -11,5 +14,5 @@
     <label for="message" class="form-label">Message:</label>
     <textarea id="message" class="form-control" formControlName="message"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  <button type="submit" class="btn btn-primary mt-3" [disabled]="myFrom.pristine">Submit</button>
 </form>

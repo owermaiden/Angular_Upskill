@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -7,7 +7,7 @@ import { Form, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./reactive-forms.component.css']
 })
 export class ReactiveFormsComponent implements OnInit {
-  myFrom: FormGroup;
+  myFrom!: FormGroup;
 
   constructor(private fb: FormBuilder){}
 
@@ -17,14 +17,15 @@ export class ReactiveFormsComponent implements OnInit {
 
   createForm(){
     this.myFrom = this.fb.group({
-      name: '',
-      email: '',
-      message: ''
+      name: ['', [Validators.required, Validators.minLength] ],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['']
     });
   }
 
   onSubmit(){
     console.log(this.myFrom);
+    this.myFrom.reset();
   }
 
 
