@@ -12,6 +12,7 @@ import { ChildComponent } from './xcomm/child/child.component';
 import { DetailComponent } from './interComm/details/details.component';
 import { ListComponent } from './interComm/like/like.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TdFormsComponent } from './forms/td-forms/td-forms.component';
 
 const routes: Routes =[
   {path:'bindings', component: BindingComponent}, // Localhost:4200/binding
@@ -20,6 +21,7 @@ const routes: Routes =[
   {path: "xcomm", component: ParentComponent},
   {path: "intercomm", component: DetailComponent},
   {path: "listComm", component: ListComponent},
+  {path: "tdform", component: TdFormsComponent},
   {path: '**', component: BindingComponent }
 ]
 
@@ -32,7 +34,8 @@ const routes: Routes =[
     ParentComponent,
     ChildComponent,
     DetailComponent,
-    ListComponent
+    ListComponent,
+    TdFormsComponent
   ],
   imports: [
     BrowserModule,
