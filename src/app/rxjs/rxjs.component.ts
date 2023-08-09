@@ -15,8 +15,10 @@ export class RxjsComponent implements OnInit, AfterViewInit, OnDestroy {
     (observer) => {
       observer.next("First");
       observer.next("Second");
-      observer.next("Third");
-      observer.complete();
+      setTimeout(() => {
+        observer.next('Third');
+        observer.complete();
+      }, 3000); 
     }
   );
 
@@ -43,8 +45,8 @@ export class RxjsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.s1.unsubscribe();
-    this.s2.unsubscribe();
+    this.s1?.unsubscribe();
+    this.s2?.unsubscribe();
   }
 
 
