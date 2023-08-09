@@ -15,11 +15,12 @@ export class ListComponent implements OnInit{
 
   ngOnInit(): void {
     this.mentors = this.service.getAllMentors();
+    console.log("ng oninit called in like component");
   }
 
   onSelectMentor(mentor: Mentor){
     this.service.selectMentor(mentor);
-    this.router.navigate(['intercomm']);
+    // this.router.navigate(['intercomm']);
   }
 
 

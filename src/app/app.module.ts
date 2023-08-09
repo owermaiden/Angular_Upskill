@@ -14,6 +14,7 @@ import { ListComponent } from './interComm/like/like.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TdFormsComponent } from './forms/td-forms/td-forms.component';
 import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes: Routes =[
   {path:'bindings', component: BindingComponent}, // Localhost:4200/binding
@@ -24,6 +25,7 @@ const routes: Routes =[
   {path: "listComm", component: ListComponent},
   {path: "tdform", component: TdFormsComponent},
   {path: "rxform", component: ReactiveFormsComponent},
+  {path: "rxjs", component: RxjsComponent},
   {path: '**', component: BindingComponent }
 ]
 
@@ -38,7 +40,8 @@ const routes: Routes =[
     DetailComponent,
     ListComponent,
     TdFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,
